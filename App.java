@@ -28,11 +28,9 @@ public class App {
 
                 switch (choice) {
                     case 1:
-                        // Add book to the library or update the quantity
                         library.addBook(scanner);
                         break;
                     case 2:
-                        // Update the quantity and display a success message
                         library.borrowBook(scanner);
                         break;
                     case 3:
