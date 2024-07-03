@@ -12,12 +12,12 @@ public class App {
     public void run() {
         int choice;
         do {
-            System.out.println("Welcome to the Library System!\nHere are the options:");
+            System.out.println("\nWelcome to the Library System!\nHere are the option list:");
             System.out.println("1. Add Books");
             System.out.println("2. Borrow Books");
             System.out.println("3. Return Books");
             System.out.println("4. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice: "); // The print() method does not move the cursor to a new line
 
             // Get the user's choice
             // nextInt() reads a int value from the user
@@ -26,6 +26,7 @@ public class App {
 
             switch (choice) {
                 case 1:
+                    // Add book to the library or update the quantity
                     library.addBook(scanner);
                     break;
                 case 2:
@@ -39,7 +40,7 @@ public class App {
                     break;
                 default:
                     // Handle invalid input and display appropriate error messages
-                    System.out.println("Invalid choice. Please try again.\n");
+                    System.out.println("Invalid choice. Please try again.");
             }
         } while (choice != 4);
     }

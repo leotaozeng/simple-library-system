@@ -12,39 +12,43 @@ public class Library {
     }
 
     public void addBook(Scanner scanner) {
-        // Prompt the user to enter the book title
         System.out.print("Enter book title: ");
         String title = scanner.nextLine();
+        String lowerCaseTitle = title.toLowerCase();
 
-        // Prompt the user to enter the author
         System.out.print("Enter author: ");
-        String author = scanner.nextLine();
+        String author = scanner.nextLine().toLowerCase();
 
-        // Prompt the user to enter the quantity
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
 
-        if (books.containsKey(title)) {
-            System.out.println(books.get(title));
-            books.get(title).addQuantity(quantity);
+        if (books.containsKey(lowerCaseTitle)) {
+            // The book already exists, we update the quantity
+            books.get(lowerCaseTitle).addQuantity(quantity);
+            System.out.println("Successfully updated the quantity of the existing book \"" + title + "\".");
         } else {
-            books.put(title, new Book(title, author, quantity));
+            // The book is new, we add it to the library
+            books.put(lowerCaseTitle, new Book(lowerCaseTitle, author, quantity));
+            System.out.println("Successfully added the book \"" + title + "\" to the library.");
         }
     }
 
     public void borrowBook(Scanner scanner) {
-        // Prompt the user to enter the book title
         System.out.print("Enter Book Title: ");
         String title = scanner.nextLine();
+        String lowerCaseTitle = title.toLowerCase();
 
-        // Prompt the user to enter the number of books to borrow
         System.out.print("Enter quantity to borrow: ");
         int quantity = scanner.nextInt();
 
-        if (books.containsKey(title) && books.get(title).borrowBook(quantity)) {
-            System.out.println("Book borrowed successfully.");
+        if (books.containsKey(lowerCaseTitle)) {
+            if (books.get(lowerCaseTitle).borrowBook(quantity)) {
+                System.out.println("Successfully borrowed " + quantity + " copies of the book \"" + title + "\".");
+            } else {
+                System.out.println("Not enough copies are available to borrow.");
+            }
         } else {
-            System.out.println("Error: Book not available or insufficient quantity.");
+            System.out.println("The book \"" + title + "\" could not be found in the library.");
         }
     }
 
@@ -65,7 +69,7 @@ public class Library {
         }
     }
 
-//    public boolean bookExists(String title) {
-//        return books.containsKey(title);
-//    }
+    public boolean bookExists(String title) {
+        return books.containsKey(title);
+    }
 }
