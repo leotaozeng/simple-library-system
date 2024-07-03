@@ -10,14 +10,6 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
     public int getQuantity() {
         return quantity;
     }

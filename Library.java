@@ -25,12 +25,14 @@ public class Library {
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
 
+        /*
+         If the book already exists in the library, update the quantity.
+         If the book is new, add it to the library.
+        */
         if (checkBookExists(lowerCaseTitle)) {
-            // The book already exists, we update the quantity
             books.get(lowerCaseTitle).addQuantity(quantity);
             System.out.println("Successfully updated the quantity of the existing book \"" + title + "\".");
         } else {
-            // The book is new, we add it to the library
             books.put(lowerCaseTitle, new Book(lowerCaseTitle, author, quantity));
             System.out.println("Successfully added the book \"" + title + "\" to the library.");
         }
