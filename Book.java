@@ -1,4 +1,3 @@
-// Create a Book class
 public class Book {
     String title;
     String author;
@@ -31,15 +30,11 @@ public class Book {
         this.quantity += quantity;
     }
 
-    public boolean borrowBook(int quantity) {
+    public boolean borrow(int quantity) {
         if (this.quantity >= quantity) {
             this.quantity -= quantity;
             return true;
         }
         return false;
-    }
-
-    public void returnBook(int quantity) {
-        this.quantity += quantity;
     }
 }

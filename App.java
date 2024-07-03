@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-    Library library = new Library(); // Create an object of class Library (This will call the constructor)
+    Library library = new Library(); // Create an object of the class Library (This will call the constructor)
 
     public static void main(String[] args) {
         App system = new App();
@@ -12,7 +12,7 @@ public class App {
     public void run() {
         int choice;
         do {
-            System.out.println("\nWelcome to the Library System!\nHere are the option list:");
+            System.out.println("\nWelcome to the Library!\nHere are the options:");
             System.out.println("1. Add Books");
             System.out.println("2. Borrow Books");
             System.out.println("3. Return Books");
@@ -30,6 +30,7 @@ public class App {
                     library.addBook(scanner);
                     break;
                 case 2:
+                    // Update the quantity and display a success message
                     library.borrowBook(scanner);
                     break;
                 case 3:
