@@ -7,7 +7,6 @@ public class App {
     public static void main(String[] args) {
         App system = new App();
         system.run();
-        system.scanner.close();
     }
 
     public void run() {
