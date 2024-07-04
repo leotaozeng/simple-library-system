@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Library {
-    Map<String, Book> books; // A collection to store books, mapped by their title
+    private final Map<String, Book> books; // A collection to store books, mapped by their title
 
     // Constructor to initialize the library with an empty collection of books
     public Library() {

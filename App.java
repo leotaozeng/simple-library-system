@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class App {
-    Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-    Library library = new Library(); // Create an object of the class Library (This will call the constructor)
+    private final Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+    private final Library library = new Library(); // Create an object of the class Library (This will call the constructor)
 
     public static void main(String[] args) {
         App system = new App();
